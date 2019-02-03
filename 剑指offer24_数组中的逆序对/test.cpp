@@ -20,7 +20,7 @@ public:
 		int temp = 0;
 		int i = 0, j = 0;
 		for (; j < data.size();++i,++j){
-			if (data[j] < data[i]){
+			if (i<j&&data[j] < data[i]){
 				result += num(data, i);
 			}
 		}
@@ -29,7 +29,12 @@ public:
 };
 
 void TestFunc(){
-
+	vector<int> array = { 1, 2, 3, 4, 5, 6, 7, 0 };
+	Solution s;
+	int result = 0;
+	result = s.InversePairs(array);
+	cout << "逆序对的个数为：";
+	cout << result << endl;
 }
 
 int main(){
