@@ -6,6 +6,9 @@ using namespace std;
 class Solution {
 public:
 	int num(vector<int> array, int temp){
+		if (temp == 0){
+			return 0;
+		}
 		int i = temp;
 		int result = 0;
 		for (i = temp; i >= 0; --i){
@@ -18,11 +21,9 @@ public:
 	int InversePairs(vector<int> data) {
 		int result = 0;
 		int temp = 0;
-		int i = 0, j = 1;
-		for (; j < data.size();++i,++j){
-			if (i<j&&data[j] < data[i]){
-				result += num(data, j);
-			}
+		int i = 0;
+		for (i = 0; i < data.size(); ++i){
+			result += num(data, i);
 		}
 		return result % 1000000007;
 	}
