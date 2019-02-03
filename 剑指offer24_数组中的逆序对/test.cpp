@@ -3,7 +3,7 @@
 
 using namespace std;
 
-class Solution {
+class Solution1 {
 public:
 	int num(vector<int> array, int temp){
 		if (temp == 0){
@@ -24,6 +24,32 @@ public:
 		int i = 0;
 		for (i = 0; i < data.size(); ++i){
 			result += num(data, i);
+		}
+		return result % 1000000007;
+	}
+};
+
+class Solution {
+public:
+	int InversePairs(vector<int> data) {
+		int result = 0;
+		int index = 0;
+		int temp = data[0];
+		int i = 0;
+		for (i = 1; i < data.size(); ++i){
+			if (data[i] < temp)
+				++index;
+		}
+		result = index;
+		i = 1;
+		for (i = 1; i < data.size(); ++i){
+			if (data[i]>temp){
+				result = 2*index;
+				temp = data[i];
+			}
+			else if (data[i] < temp){
+				--index;
+			}
 		}
 		return result % 1000000007;
 	}
