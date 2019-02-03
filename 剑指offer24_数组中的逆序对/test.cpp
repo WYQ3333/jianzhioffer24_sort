@@ -18,10 +18,11 @@ public:
 	int InversePairs(vector<int> data) {
 		int result = 0;
 		int temp = 0;
-		int i = 0, j = 0;
+		int i = 0, j = 1;
 		for (; j < data.size();++i,++j){
 			if (i<j&&data[j] < data[i]){
-				result += num(data, i);
+				result++;
+				result += num(data, j);
 			}
 		}
 		return result;
