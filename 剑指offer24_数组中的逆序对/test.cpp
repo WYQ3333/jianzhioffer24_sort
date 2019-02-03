@@ -25,7 +25,7 @@ public:
 				result += num(data, j);
 			}
 		}
-		return result;
+		return result % 1000000007;
 	}
 };
 
