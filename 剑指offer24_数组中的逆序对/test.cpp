@@ -44,7 +44,7 @@ public:
 		i = 1;
 		for (i = 1; i < data.size(); ++i){
 			if (data[i]>temp){
-				result = 2*index;
+				result += index;
 				temp = data[i];
 			}
 			else if (data[i] < temp){
@@ -63,7 +63,7 @@ void TestFunc(){
 		275, 401, 497, 82, 935, 983, 583, 523, 697, 478, 147, 795, 380, 973, 958,
 		115, 773, 870, 259, 655, 446, 863, 735, 784, 3, 671, 433, 630, 425, 930, 
 		64, 266, 235, 187, 284, 665, 874, 80, 45, 848, 38, 811, 267, 575 };
-	/*vector<int> array = { 6, 7, 3, 4 };*/
+	/*vector<int> array = { 1,2,3,4,5,6,7,0};*/
 	Solution s;
 	int result = 0;
 	result = s.InversePairs(array);
